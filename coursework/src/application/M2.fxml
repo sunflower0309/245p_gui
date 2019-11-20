@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.application.Application?>
+<?import javafx.application.Platform?>
+<?import javafx.beans.value.ChangeListener?>
+<?import javafx.beans.value.ObservableValue?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.ObservableList?>
+<?import javafx.event.ActionEvent?>
+<?import javafx.event.EventHandler?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Orientation?>
+<?import javafx.geometry.Side?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.XYChart?>
+<?import javafx.scene.control.Alert?>
+<?import javafx.scene.control.Alert.AlertType?>
+<?import javafx.scene.control.TableColumn.CellEditEvent?>
+<?import javafx.scene.control.TableRow?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableCell?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.ChoiceBoxTableCell?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.cell.TextFieldTableCell?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.MouseEvent?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.stage.FileChooser?>
+<?import javafx.stage.Stage?>
+<?import java.io.File?>
+<?import java.io.FileOutputStream?>
+<?import java.text.DecimalFormat?>
+<?import java.util.ArrayList?>
+<?import java.util.List?>
+<?import javax.swing.JFileChooser?>
+
+
+<TabPane fx:id="tabPane" fx:controller="application.M2_controller" xmlns:fx="http://javafx.com/fxml/1">
+	<tabs>
+		<Tab fx:id="roaster" text="Roaster" closable="false">
+			<ScrollPane fx:id="s">
+				<FlowPane fx:id="root">
+					<VBox fx:id="vbox_roaster">
+					<children>
+						<VBox fx:id="vv">
+						<children>
+						<MenuBar fx:id="menuBar">
+							<menus>
+								<Menu fx:id="fileMenu" text="Menu">
+									<items>
+										<MenuItem fx:id="newMenuItem" text="New"/>
+										<MenuItem fx:id="openMenuItem" text="Open"/>
+										<MenuItem fx:id="saveMenuItem" text="Save"/>
+										<MenuItem fx:id="saveAsMenuItem" text="Save As"/>
+										<MenuItem fx:id="closeMenuItem" text="Close"/>
+										<MenuItem fx:id="exitMenuItem" text="Exit"/>
+									</items>
+								</Menu>
+							</menus>
+						</MenuBar>
+						<TableView fx:id="table" styleClass="TableView">
+						<columns>
+							<TableColumn fx:id="columnid" text="ID" styleClass="table-row"/>
+							<TableColumn fx:id="columnLastname" text="Lastname" styleClass="table-row"/>
+							<TableColumn fx:id="columnFirstname" text="Firstname" styleClass="table-row"/>
+							<TableColumn fx:id="columnHonor" text="Honor" styleClass="table-row"/>
+							<TableColumn fx:id="columnNotes" text="Notes" styleClass="table-row"/>
+							<TableColumn fx:id="columnPhoto" text="Photo" styleClass="table-row"/>
+							<TableColumn fx:id="columnMajor" text="Major" styleClass="table-row"/>
+							<TableColumn fx:id="columnCurrentgrade" text="Currentgrade" styleClass="table-row"/>
+							<TableColumn fx:id="columnGradeoption" text="Gradeoption" styleClass="table-row"/>						
+						</columns>
+						</TableView>
+						</children>
+						</VBox>
+					</children>
+					</VBox>
+						<HBox fx:id="b2">
+						<children>
+							<VBox fx:id="b1">
+							<children>
+								<HBox fx:id="ID_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="ID"/>
+										<TextField fx:id="ID" />
+									</children>
+								</HBox>
+								<HBox fx:id="Lastname_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Lastname"/>
+										<TextField fx:id="Lastname" />
+									</children>
+								</HBox>
+								<HBox fx:id="Firstname_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Firstname"/>
+										<TextField fx:id="Firstname" />
+									</children>
+								</HBox>
+								<HBox fx:id="Currentgrade_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Currentgrade"/>
+										<ChoiceBox fx:id="Currentgrade" />
+									</children>
+								</HBox>
+								<HBox fx:id="Honor_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Honor"/>
+										<TextField fx:id="Honor" />
+									</children>
+								</HBox>
+								<HBox fx:id="Notes_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Notes"/>
+										<TextField fx:id="Notes" />
+									</children>
+								</HBox>
+								<HBox fx:id="Major_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Major"/>
+										<ChoiceBox fx:id="Major" />
+									</children>
+								</HBox>
+								<HBox fx:id="Gradeoption_BOX" spacing="5" styleClass="hbox-all">
+									<children>
+										<Label text="Gradeoption"/>
+										<ChoiceBox fx:id="Gradeoption" />
+									</children>
+								</HBox>
+								<HBox fx:id="hBox_button_load" spacing="5" styleClass="hbox-all">
+									<children>
+										<Button fx:id="load" text="load" onAction="#load" />
+									</children>
+								</HBox>
+								<Button fx:id="newstu" text="New Student" onAction="#newstu" styleClass="btn-basic"/>
+								<Button fx:id="save" text="Save Change" onAction="#save" styleClass="btn-basic"/>
+								<Button fx:id="delete" text="Delete Student" onAction="#delete" styleClass="btn-basic"/>
+								<Button fx:id="previous" text="Previous Student" onAction="#previous" styleClass="btn-basic"/>
+								<Button fx:id="next" text="Next Student" onAction="#next" styleClass="btn-basic"/>
+							</children>
+							</VBox>
+							<ImageView fx:id="imv">
+							</ImageView>
+						</children>	
+						</HBox>
+				</FlowPane>
+			</ScrollPane>
+		
+		</Tab>
+		<Tab fx:id="chart" text="Chart" closable="false">
+			<ScrollPane fx:id="sc">
+				<HBox fx:id="hbox_chart">
+					<children>
+						
+					</children>
+				</HBox>
+			</ScrollPane>
+		</Tab>
+	</tabs>
+</TabPane>
+

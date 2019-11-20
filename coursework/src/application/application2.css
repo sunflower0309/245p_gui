@@ -1,0 +1,98 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+   -fx-font-size: 14px;
+   -fx-background-color:lightgrey ;
+}
+.btn-basic {
+   /*文本对齐方式*/
+   -fx-text-alignment: center;
+   /*合适高度*/
+   -fx-pref-height: 38px;
+   /*内边距*/
+   -fx-padding: 0 18px;
+   /*无边框*/
+   -fx-border-style:solid ;
+   /*鼠标样式*/
+   -fx-cursor: pointer;
+}
+
+/*鼠标覆盖按钮效果*/
+.btn-basic:hover {
+   /*粗体*/
+   -fx-font-weight: bold;
+   /*透明度*/
+   -fx-opacity: 0.8;
+}
+.hbox-all{
+	-fx-padding:5,5,5,5;
+	-fx-border-style:solid ;
+}
+.slider .thumb {
+    -fx-background-color :blue;   
+    -fx-padding: 5;
+}
+
+.TableView{
+    -fx-table-cell-border-color:transparent;
+    -fx-border-color: white;
+    -fx-alignment: center-left;
+}
+
+.table-row{
+    -fx-border-color: white;
+    -fx-border-style:solid ;
+}
+
+.choice-box .context-menu { -fx-background-color: black; }
+
+.choice-box .menu-item:focused { -fx-background-color: orange; }
+
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+
+.choice-box .menu-item:focused > .label { -fx-text-fill: black; }
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: black;
+}
+.menu-item .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:focused {
+     -fx-background-color: darkgray;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: blue;
+}
+
+.chart {
+   
+    -fx-background-color: white;
+}
+.default-color0.chart-pie { -fx-background-color:black; }
+.default-color1.chart-pie { -fx-background-color:yellow; }
+.default-color2.chart-pie { -fx-background-color:blue; }
+
+.data0.chart-bar {
+    -fx-background-color:black;
+}
+.data1.chart-bar {
+    -fx-background-color:black;
+}
+.data2.chart-bar {
+    -fx-background-color:black;
+}
+.data3.chart-bar {
+    -fx-background-color:black;
+}
+.data4.chart-bar {
+    -fx-background-color:black;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    
+}

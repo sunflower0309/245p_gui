@@ -1,0 +1,31 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+   -fx-font-size: 14px;
+   -fx-background-color:white ;
+}
+.btn-basic {
+   /*文本对齐方式*/
+   -fx-text-alignment: center;
+   /*合适高度*/
+   -fx-pref-height: 38px;
+   /*内边距*/
+   -fx-padding: 0 18px;
+   /*无边框*/
+   -fx-border-style:solid ;
+   /*鼠标样式*/
+   -fx-cursor: pointer;
+}
+
+/*鼠标覆盖按钮效果*/
+.btn-basic:hover {
+   /*粗体*/
+   -fx-font-weight: bold;
+   /*透明度*/
+   -fx-opacity: 0.8;
+}
+
+.slider .thumb {
+    -fx-background-color :blue;   
+    -fx-padding: 5;
+}
